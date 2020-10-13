@@ -26,7 +26,7 @@ class Header extends Component {
           <NavItem className='left'>下载App</NavItem>
           <NavItem className='right'>登录</NavItem>
           <NavItem className='right'>
-            <span className='icon iconfont'>&#xe636;</span>
+            <i className='iconfont'>&#xe636;</i>
           </NavItem>
           <SearchWrapper>
             <NavSearch></NavSearch>
@@ -37,7 +37,7 @@ class Header extends Component {
         </Nav>
         <Addition>
           <Button className='writting'>
-            <span className="icon iconfont">&#xe6e5;</span>
+            <i className='iconfont'>&#xe6e5;</i>
 							写文章
 						</Button>
           <Button className='reg'>注册</Button>

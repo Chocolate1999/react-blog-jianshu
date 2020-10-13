@@ -166,7 +166,7 @@ export const Button = styled.div`
 		color: #ec6149;
 	}
 	&.writting {
-		color: #fff;
+    color: #fff;
 		background: #ec6149;
 	}
 `
