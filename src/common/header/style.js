@@ -20,7 +20,7 @@ export const Logo = styled.div`
 `;
 
 export const Nav = styled.div`
-	width: 960px;
+  width: 960px;
 	height: 100%;
 	padding-right: 70px;
 	box-sizing: border-box;
@@ -46,7 +46,7 @@ export const NavItem = styled.div`
 
 export const SearchWrapper = styled.div`
 	position: relative;
-	float: left;
+  float: left;
 	.zoom {
 		position: absolute;
 		right: 5px;
