@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 /* 使用 reset.css 设置默认样式*/
-createGlobalStyle`
+export const GlobalIcon  = createGlobalStyle`
 @font-face {font-family: "iconfont";
   src: url('./iconfont.eot?t=1602593143919'); /* IE9 */
   src: url('./iconfont.eot?t=1602593143919#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -16,4 +16,5 @@ createGlobalStyle`
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}`;
+}
+`;
