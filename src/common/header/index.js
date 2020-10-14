@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { actionCreators } from './store';
 import '../../statics/iconfont/iconfont';
+import { CSSTransition } from 'react-transition-group';
 import {
   HeaderWrapper,
   Logo,
@@ -18,6 +21,7 @@ import {
 
 class Header extends Component {
   render() {
+    const { focused, handleInputFocus, handleInputBlur } = this.props;
     return (
       <HeaderWrapper>
         <Logo />
@@ -29,8 +33,17 @@ class Header extends Component {
             <i className='iconfont'>&#xe636;</i>
           </NavItem>
           <SearchWrapper>
-            <NavSearch></NavSearch>
-            <i className='iconfont'>
+            <CSSTransition
+              in={focused}
+              timeout={200}
+              classNames="slide"
+            >
+              <NavSearch className={focused ? 'focused' : ''}
+                onFocus={() => handleInputFocus()}
+                onBlur={handleInputBlur}
+              ></NavSearch>
+            </CSSTransition>
+            <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>
               &#xe60c;
 						</i>
           </SearchWrapper>
@@ -46,4 +59,22 @@ class Header extends Component {
     )
   }
 }
-export default Header;
+
+const mapStateToProps = (state) => {
+  return {
+    focused: state.getIn(['header', 'focused']),
+  }
+}
+
+const mapDispathToProps = (dispatch) => {
+  return {
+    handleInputFocus(list) {
+      dispatch(actionCreators.searchFocus());
+    },
+    handleInputBlur() {
+      dispatch(actionCreators.searchBlur());
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispathToProps)(Header);
