@@ -20,6 +20,9 @@ import {
 } from './style';
 
 class Header extends Component {
+
+
+  
   render() {
     const { focused, handleInputFocus, handleInputBlur } = this.props;
     return (
@@ -46,6 +49,7 @@ class Header extends Component {
             <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>
               &#xe60c;
 						</i>
+            {this.getListArea()}
           </SearchWrapper>
         </Nav>
         <Addition>
